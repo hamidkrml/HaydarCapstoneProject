@@ -22,7 +22,16 @@ Mobile App (Android/iOS)
 
 ## Quick Start
 
-### Backend Server
+### Backend Server (Docker - Önerilen)
+
+```bash
+cd backend
+docker-compose up -d
+```
+
+Server runs on `http://localhost:8000`
+
+### Backend Server (Local Python)
 
 ```bash
 cd backend
@@ -30,13 +39,21 @@ pip install -r requirements.txt
 python main.py
 ```
 
-Server runs on `http://localhost:8000`
-
 Or using uvicorn directly:
 ```bash
 cd backend
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
+
+### Android Emulator Kurulumu
+
+Detaylı rehber için: [ANDROID_STUDIO_SETUP.md](ANDROID_STUDIO_SETUP.md)
+
+Kısa özet:
+1. Android Studio > Device Manager > Create Device
+2. Fitness app için: Phone emulator oluştur
+3. Watch app için: Wear OS emulator oluştur
+4. Emulator'leri başlat ve `flutter run` yap
 
 ## Backend Endpoints
 
